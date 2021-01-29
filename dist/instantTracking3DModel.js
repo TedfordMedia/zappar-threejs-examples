@@ -676,7 +676,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => __WEBPACK_DEFAULT_EXPORT__\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + \"2a60fd732e945bb4cd1b33aa28d682a8.glb\");\n\n//# sourceURL=webpack://zappar-threejs-examples/./src/assets/waving.glb?./node_modules/file-loader/dist/cjs.js");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => __WEBPACK_DEFAULT_EXPORT__\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + \"1ed743a49311491e9927cf42b81ee5c8.glb\");\n\n//# sourceURL=webpack://zappar-threejs-examples/./src/assets/waving.glb?./node_modules/file-loader/dist/cjs.js");
 
 /***/ }),
 

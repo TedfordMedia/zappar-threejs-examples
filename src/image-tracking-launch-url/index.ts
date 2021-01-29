@@ -27,8 +27,7 @@ if (ZapparThree.browserIncompatible()) {
 // ZapparThree provides a LoadingManager that shows a progress bar while
 // the assets are downloaded. You can use this if it's helpful, or use
 // your own loading UI - it's up to you :-)
-const manager = new ZapparThree.LoadingManager();
-
+ 
 // Construct our ThreeJS renderer and scene as usual
 const renderer = new THREE.WebGLRenderer({ antialias: true });
 const scene = new THREE.Scene();
@@ -65,8 +64,7 @@ scene.background = camera.backgroundTexture;
 const interactionHelper = new InteractionHelper(camera, renderer);
 
 // Set an error handler on the loader to help us check if there are issues loading content.
-manager.onError = (url) => console.log('There was an error loading ' + url);
-
+ 
 // Since we're using webpack, we can use the 'file-loader' to make sure these assets are
 // automatically included in our output folder
 const font_url = require('file-loader!../assets/fonts/Passion.js').default
@@ -78,7 +76,7 @@ const target_url = require("file-loader!../assets/example-tracking-image.zpt").d
 // Create a zappar image_tracker and wrap it in an image_tracker_group for us
 // to put our ThreeJS content into
 // Pass our loading manager in to ensure the progress bar works correctly
-const image_tracker = new ZapparThree.ImageTrackerLoader(manager).load(target_url);
+const image_tracker = new ZapparThree.ImageTrackerLoader( ).load(target_url);
 const image_tracker_group = new ZapparThree.ImageAnchorGroup(camera, image_tracker);
 const content_group = new THREE.Group();
 
@@ -99,7 +97,7 @@ button_background_plane.position.z = 0.001;
 
 // Loaders are used to load external files
 // Pass our loading manager in to ensure the progress bar works correctly
-const font_loader = new THREE.FontLoader(manager);
+const font_loader = new THREE.FontLoader( );
 
 // Create a plane geometry mesh for the background
 const plane = new THREE.Mesh(
@@ -135,12 +133,12 @@ image_tracker_group.add(content_group);
 // Use interaction helper to listen for mouse down events on button_background_plane,
 // on mouse down, launch Zappar.com in a new tab.
 interactionHelper.addMouseDownListener(button_background_plane, () => {
-    window.open("https://www.zappar.com", '_blank');
+    window.open("https://www.orange.com/en", '_blank');
 });
 
 // when we lose sight of the camera, hide the scene contents.
-image_tracker.onVisible.bind(() => scene.visible = true)
-image_tracker.onNotVisible.bind(() => scene.visible = false)
+// image_tracker.onVisible.bind(() => scene.visible = true)
+// image_tracker.onNotVisible.bind(() => scene.visible = false)
 
 // Use a function to render our scene as usual
 function render(): void {

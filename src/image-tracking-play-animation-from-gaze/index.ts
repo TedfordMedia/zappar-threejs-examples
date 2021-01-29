@@ -64,7 +64,9 @@ manager.onError = (url) => console.log('There was an error loading ' + url);
 
 // Since we're using webpack, we can use the 'file-loader' to make sure these assets are
 // automatically included in our output folder
-const gltf_url = require("file-loader!../assets/waving.glb").default;
+//const gltf_url = require("file-loader!../assets/waving.glb").default;
+const gltf_url = require("file-loader!../assets/four_screens_simple_v4.glb").default;
+
 const target_url = require("file-loader!../assets/example-tracking-image.zpt").default;
 
 // Create a zappar ImageTracker and wrap it in an ImageAnchorGroup for us
@@ -120,8 +122,8 @@ const hotspot_plane = new THREE.Mesh(
 image_tracker_group.add(hotspot_plane)
 
 // When we lose sight of the camera, hide the scene contents.
-image_tracker.onVisible.bind(() => scene.visible = true)
-image_tracker.onNotVisible.bind(() => scene.visible = false)
+// image_tracker.onVisible.bind(() => scene.visible = true)
+// image_tracker.onNotVisible.bind(() => scene.visible = false)
 
 // used to get deltaTime for our animations.
 const clock = new THREE.Clock();
