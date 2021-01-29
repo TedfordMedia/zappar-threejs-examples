@@ -7,7 +7,8 @@ import * as THREE from "three";
 import * as ZapparThree from "@zappar/zappar-threejs"
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader'
 
-
+let action: THREE.AnimationAction;
+let mixer: THREE.AnimationMixer;
 // The SDK is supported on many different browsers, but there are some that
 // don't provide camera access. This function detects if the browser is supported
 // For more information on support, check out the readme over at
@@ -22,7 +23,7 @@ if (ZapparThree.browserIncompatible()) {
     // so we throw an exception here.
     throw new Error("Unsupported browser")
 }
-
+ 
 // ZapparThree provides a LoadingManager that shows a progress bar while
 // the assets are downloaded. You can use this if it's helpful, or use
 // your own loading UI - it's up to you :-)
@@ -66,16 +67,18 @@ const instant_tracker_group = new ZapparThree.InstantWorldAnchorGroup(camera, in
 
 // Add our instant tracker group into the ThreeJS scene
 scene.add(instant_tracker_group);
-
+ 
 // Get the URL of the "waving.glb" 3D model
 // Since we're using webpack, we can use the 'file-loader' to make sure it's
 // automatically included in our output folder
-const gltfUrl = require("file-loader!../assets/waving.glb").default;
+const gltfUrl = require("file-loader!../assets/four_screens_simple_v4.glb").default;
 
 // Load a 3D model to place within our group (using ThreeJS's GLTF loader)
 // Pass our loading manager in to ensure the progress bar works correctly
 let gltfLoader = new GLTFLoader(manager);
 gltfLoader.load(gltfUrl, gltf => {
+    mixer = new THREE.AnimationMixer(gltf.scene);
+    action = mixer.clipAction(gltf.animations[0]);
     // Now the model has been loaded, we can add it to our instant_tracker_group
     instant_tracker_group.add(gltf.scene);
 }, undefined, () => {
@@ -101,7 +104,8 @@ placeButton.addEventListener("click", () => {
     hasPlaced = true;
     placeButton.remove();
 });
-
+// Used to get deltaTime for our animations.
+const clock = new THREE.Clock();
 // Use a function to render our scene as usual
 function render(): void {
 
@@ -110,7 +114,9 @@ function render(): void {
         // to be directly in front of the user
         instant_tracker_group.setAnchorPoseFromCameraOffset(0, 0, -5);
     }
-
+ // If the mixer has been declared, update our animations with delta time
+     // if the mixer has been declared, update our animations with delta time
+     if (mixer) mixer.update(clock.getDelta());
     // The Zappar camera must have updateFrame called every frame
     camera.updateFrame(renderer);
 

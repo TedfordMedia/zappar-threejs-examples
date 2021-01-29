@@ -94,50 +94,13 @@ gltfLoader.load(gltf_url, gltf => {
     action = mixer.clipAction(gltf.animations[0]);
 
     // Now the model has been loaded, we can roate it and add it to our image_tracker_group
-   // image_tracker_group.add(gltf.scene.rotateX(Math.PI / 2));
-    image_tracker_group.add(gltf.scene);
+    image_tracker_group.add(gltf.scene.rotateX(Math.PI / 2));
 }, undefined, () => {
     console.log("An error ocurred loading the GLTF model");
 });
 
 // Light up our scene with an ambient light
 image_tracker_group.add(new THREE.AmbientLight(0xffffff));
-
-
-let directionalLight = new THREE.DirectionalLight("white", 0.8);
-directionalLight.position.set(1, 5, 2);
-directionalLight.lookAt(0, 0, 0);
-image_tracker_group.add(directionalLight);
-
-let xdirectionalLight = new THREE.DirectionalLight("white", 0.8);
-xdirectionalLight.position.set(-4, 5, 3);
-xdirectionalLight.lookAt(0, 0, 0);
-image_tracker_group.add(xdirectionalLight);
-
-
-
-
-const spotLight = new THREE.SpotLight( 0xffffff );
-spotLight.position.set( 5, 5, 5 );
-
-spotLight.castShadow = true;
-
-spotLight.shadow.mapSize.width = 1024;
-spotLight.shadow.mapSize.height = 1024;
-
-spotLight.shadow.camera.near = 500;
-spotLight.shadow.camera.far = 4000;
-spotLight.shadow.camera.fov = 30;
-
-image_tracker_group.add( spotLight );
-
-
-
-
-
-
-
-
 
 // Create a new div element on the document
 const button = document.createElement('div');
@@ -152,22 +115,12 @@ button.onclick = () => { action.play() };
 document.body.appendChild(button);
 
 // When we lose sight of the camera, hide the scene contents.
-//image_tracker.onVisible.bind(() => scene.visible = true)
-//mage_tracker.onNotVisible.bind(() => scene.visible = false)
-alert('xxxxx')
- 
-image_tracker.onVisible.bind(() =>  function() {
-    alert('is now onVisible ');
-    scene.visible = true;
-  });
-  image_tracker.onNotVisible.bind(() =>  function() {
-    alert('is now onNotVisible ');
-    scene.visible = false;
-  });
+image_tracker.onVisible.bind(() => scene.visible = true)
+image_tracker.onNotVisible.bind(() => scene.visible = false)
 
 // Used to get deltaTime for our animations.
 const clock = new THREE.Clock();
-
+alert('i am original')
 // Use a function to render our scene as usual
 function render(): void {
 
