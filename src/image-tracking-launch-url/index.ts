@@ -70,6 +70,8 @@ manager.onError = (url) => console.log('There was an error loading ' + url);
 // Since we're using webpack, we can use the 'file-loader' to make sure these assets are
 // automatically included in our output folder
 const font_url = require('file-loader!../assets/fonts/Passion.js').default
+//const font_url = require('file-loader!../assets/fonts/droid_sans_regular.typeface.json').default
+
 const target_url = require("file-loader!../assets/example-tracking-image.zpt").default;
 
 
