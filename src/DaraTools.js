@@ -7,17 +7,6 @@ import { TWEEN } from '../jsm/libs/tween.module.min.js';
  
 
 var masterTools = function (xprefix) {   
-    this.prefix = ''; 
-    this.hasBorder = true;
-    this.meetingID = '';
-    this.message = '';
-    this.currentMeetingID = '';
-    this.isBroadcasting = false; 
-    this.xscenesarray = [];
-    this.spitSpeed = 28;
-    this.spitVol = 200;
-    this.rolloffFactor = 2;
-    this.sceneToAddTo = false;
     this.renderer;
     this.gloader = new GLTFLoader();
     this.tloader = new THREE.TextureLoader; 
@@ -461,6 +450,9 @@ var masterTools = function (xprefix) {
     this.setupMainCamera = function (camera) {
         this.camera = camera;
     };
+    this.test = function (){
+        alert('testing123')
+    }
     this.showOnscreenGPSMessage = function (){ 
         $('#teddydisplay').html('GPS FOUND');
       //  setTimeout(function(){   $('#teddydisplay').hide(); }, 5000);
@@ -472,3 +464,7 @@ var masterTools = function (xprefix) {
 export {   
     masterTools,
 };
+
+// module.exports.masterTools = () => {
+//     console.log("hilfe");   
+// }
