@@ -1,11 +1,14 @@
 /// Zappar for ThreeJS Examples
 /// Instant Tracking 3D Model  
-//import * as DaraTools from module("./src/DaraTools.js");
+//require("./src/DaraTools.js") ;
+// const DaraTools = require("./src/DaraTools.js");
+// import * as DaraTools from module("./src/DaraTools.js");
+//çimport DaraTools = require("./../src/DaraTools");
 import * as THREE from "three"; 
 import * as ZapparThree from "@zappar/zappar-threejs"
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader'
-//const masterTools = new DaraTools.masterTools();  
-
+// const masterTools = new DaraTools.masterTools();  
+// masterTools.test();
 // The SDK is supported on many different browsers, but there are some that
 // don't provide camera access. This function detects if the browser is supported
 // For more information on support, check out the readme over at
@@ -25,6 +28,7 @@ if (ZapparThree.browserIncompatible()) {
 // the assets are downloaded. You can use this if it's helpful, or use
 // your own loading UI - it's up to you :-)
 const manager = new ZapparThree.LoadingManager();
+alert('i should show the tap place message for searching  and also for tap place  message when  signal lost')
 
 // Construct our ThreeJS renderer and scene as usual
 const renderer = new THREE.WebGLRenderer({ antialias: true });
