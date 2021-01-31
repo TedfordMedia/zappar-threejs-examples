@@ -1,12 +1,10 @@
 /// Zappar for ThreeJS Examples
-/// Instant Tracking 3D Model
-
-// In this example we track a 3D model using instant world tracking
-
-import * as THREE from "three";
+/// Instant Tracking 3D Model  
+//import * as DaraTools from module("./src/DaraTools.js");
+import * as THREE from "three"; 
 import * as ZapparThree from "@zappar/zappar-threejs"
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader'
-
+//const masterTools = new DaraTools.masterTools();  
 
 // The SDK is supported on many different browsers, but there are some that
 // don't provide camera access. This function detects if the browser is supported
@@ -15,7 +13,7 @@ import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader'
 if (ZapparThree.browserIncompatible()) {
     // The browserIncompatibleUI() function shows a full-page dialog that informs the user
     // they're using an unsupported browser, and provides a button to 'copy' the current page
-    // URL so they can 'paste' it into the address bar of a compatible alternative.
+    // URL so they can 'paste' it i nto the address bar of a compatible alternative.
     ZapparThree.browserIncompatibleUI();
 
     // If the browser is not compatible, we can avoid setting up the rest of the page
@@ -67,7 +65,23 @@ const instant_tracker_group = new ZapparThree.InstantWorldAnchorGroup(camera, in
 // Add our instant tracker group into the ThreeJS scene
 scene.add(instant_tracker_group);
 
-// Get the URL of the "waving.glb" 3D model
+
+
+
+
+// // Create a zappar image_tracker and wrap it in an image_tracker_group for us
+// // to put our ThreeJS content into
+// // Pass our loading manager in to ensure the progress bar works correctly
+// const image_tracker = new ZapparThree.ImageTrackerLoader(manager).load(target_url);
+// const image_tracker_group = new ZapparThree.ImageAnchorGroup(camera, image_tracker);
+
+// // Add our image tracker group into the ThreeJS scene
+// scene.add(image_tracker_group);
+
+
+
+
+  
 // Since we're using webpack, we can use the 'file-loader' to make sure it's
 // automatically included in our output folder
 const gltfUrl = require("file-loader!../assets/four_screens_simple_v5.glb").default;
@@ -82,7 +96,7 @@ gltfLoader.load(gltfUrl, gltf => {
     console.log("An error ocurred loading the GLTF model");
 });
 
-// Let's add some lighting, first a directional light above the model pointing down
+// Let's add some lighting, first a directional light above the model pointin g down
 let directionalLight = new THREE.DirectionalLight("white", 0.8);
 directionalLight.position.set(0, 5, 0);
 directionalLight.lookAt(0, 0, 0);

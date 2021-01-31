@@ -7,10 +7,10 @@
 import * as ZapparThree from "@zappar/zappar-threejs"
 import * as THREE from "three";
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
-
+ 
 // The SDK is supported on many different browsers, but there are some that
 // don't provide camera access. This function detects if the browser is supported
-// For more information on support, check out the readme over at
+// For more information on support, check out the readme over at 
 // https://www.npmjs.com/package/@zappar/zappar-threejs
 if (ZapparThree.browserIncompatible()) {
     // The browserIncompatibleUI() function shows a full-page dialog that informs the user
@@ -18,7 +18,7 @@ if (ZapparThree.browserIncompatible()) {
     // URL so they can 'paste' it into the address bar of a compatible alternative.
     ZapparThree.browserIncompatibleUI();
 
-    // If the browser is not compatible, we can avoid setting up the rest of the page
+    // If the browser is not compatible, we can avoid setting u  p the rest of the page
     // so we throw an exception here.
     throw new Error("Unsupported browser")
 }
@@ -64,7 +64,7 @@ manager.onError = (url) => console.log('There was an error loading ' + url);
 
 // Since we're using webpack, we can use the 'file-loader' to make sure these assets are
 // automatically included in our output folder
-const gltf_url = require("file-loader!../assets/waving.glb").default;
+const gltf_url = require("file-loader!../assets/four_screens_simple_v5.glb").default;
 const target_url = require("file-loader!../assets/example-tracking-image.zpt").default;
 
 
@@ -119,8 +119,7 @@ image_tracker.onVisible.bind(() => scene.visible = true)
 image_tracker.onNotVisible.bind(() => scene.visible = false)
 
 // Used to get deltaTime for our animations.
-const clock = new THREE.Clock();
-alert('i am original')
+const clock = new THREE.Clock(); 
 // Use a function to render our scene as usual
 function render(): void {
 

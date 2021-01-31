@@ -4,11 +4,13 @@ const baseConfig = require('./webpack.base.config');
 
 baseConfig.entry = {
     launchUrl: "./src/image-tracking-launch-url/index.ts",
+    startMe: "./src/index/index.ts",
     playAnimationFromButtonTap: "./src/image-tracking-glb-animation/index.ts",
     playAnimationFromGaze: "./src/image-tracking-play-animation-from-gaze/index.ts",
     faceTrackingFaceMesh: "./src/face-tracking-face-mesh/index.ts",
     faceTracking3DModel: "./src/face-tracking-3d-model-photo-feature/index.ts",
-    instantTracking3DModel: "./src/instant-tracking-gltf-loader/index.ts"
+    instantTracking3DModel: "./src/instant-tracking-gltf-loader/index.ts",
+    orangeinstantTracking3DModel: "./src/orange-instant-tracking-gltf-loader/index.ts"
 }
 
 baseConfig.output = {
@@ -18,9 +20,15 @@ baseConfig.output = {
 
 baseConfig.plugins = [
     new HtmlWebpackPlugin({
-        filename: 'image-tracking-launch-url.html',
-        template: './src/base.html',
-        chunks: ['launchUrl']
+        filename: 'index.html',
+        template: './src/baseindex.html',
+        title: 'DARABASE Demos',
+        chunks: ['startMe']
+    }),
+    new HtmlWebpackPlugin({
+        filename: 'image-tracking-glb-animation.html',
+        template: './src/play-animation-from-button-tap.html',
+        chunks: ['playAnimationFromButtonTap']
     }),
     new HtmlWebpackPlugin({
         filename: 'image-tracking-glb-animation.html',
@@ -45,6 +53,13 @@ baseConfig.plugins = [
     new HtmlWebpackPlugin({
         filename: 'instant-tracking-gltf-loader.html',
         template: './src/instant-tracking.html',
+        title: "My Page TItle",
+        chunks: ['instantTracking3DModel']
+    }),
+    new HtmlWebpackPlugin({
+        filename: 'orange-instant-tracking-gltf-loader.html',
+        template: './src/instant-tracking.html',
+        title: "Orange Demo   can tapplace run automatically",
         chunks: ['instantTracking3DModel']
     })
 ];

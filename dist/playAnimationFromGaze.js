@@ -687,7 +687,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => __WEBPACK_DEFAULT_EXPORT__\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + \"1b767dc60973359ed05016ff1072e6a7.glb\");\n\n//# sourceURL=webpack://zappar-threejs-examples/./src/assets/four_screens_simple_v5.glb?./node_modules/file-loader/dist/cjs.js");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => __WEBPACK_DEFAULT_EXPORT__\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + \"0a1edca5317754eac62f23737e53bd69.glb\");\n\n//# sourceURL=webpack://zappar-threejs-examples/./src/assets/four_screens_simple_v5.glb?./node_modules/file-loader/dist/cjs.js");
 
 /***/ }),
 
