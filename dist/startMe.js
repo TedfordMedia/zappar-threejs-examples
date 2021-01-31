@@ -7,10 +7,9 @@
  * If you are looking for production-ready output files, see mode: "production" (https://webpack.js.org/configuration/mode/).
  */
 /******/ (() => { // webpackBootstrap
-/******/ 	"use strict";
 /*!****************************!*\
   !*** ./src/index/index.ts ***!
   \****************************/
-eval("\n\n\n//# sourceURL=webpack://zappar-threejs-examples/./src/index/index.ts?");
+eval(" \n\n//# sourceURL=webpack://zappar-threejs-examples/./src/index/index.ts?");
 /******/ })()
 ;

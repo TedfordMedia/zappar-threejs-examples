@@ -29,6 +29,11 @@ module.exports = {
         loader: "file-loader"
       }
     ],
-
+    rules: [
+      {
+        test: /\.exec\.js$/,
+        use: [ 'script-loader' ]
+      }
+    ],
   }
 };

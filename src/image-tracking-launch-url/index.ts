@@ -7,6 +7,7 @@
 
 import * as THREE from "three";
 import * as ZapparThree from "@zappar/zappar-threejs"
+//import { InteractionHelper } from '../interactionhelper';
 import { InteractionHelper } from '../interactionhelper';
 
 // The SDK is supported on many different browsers, but there are some that
@@ -131,7 +132,7 @@ font_loader.load(font_url, function (font: THREE.Font) {
 image_tracker_group.add(content_group);
 
 // Use interaction helper to listen for mouse down events on button_background_plane,
-// on mouse down, launch Zappar.com in a new tab.
+// on mouse down, launch website in a new tab.
 interactionHelper.addMouseDownListener(button_background_plane, () => {
     window.open("https://www.orange.com/en", '_blank');
 });

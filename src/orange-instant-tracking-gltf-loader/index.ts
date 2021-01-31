@@ -3,11 +3,30 @@
 //require("./src/DaraTools.js") ;
 // const DaraTools = require("./src/DaraTools.js");
 // import * as DaraTools from module("./src/DaraTools.js");
-//çimport DaraTools = require("./../src/DaraTools");
+ 
+//import {DaraTools}  from require("script-loader!../src/DaraTools.js");
+//mport DaraTools = require("./../src/DaraTools");
 import * as THREE from "three"; 
 import * as ZapparThree from "@zappar/zappar-threejs"
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader'
-// const masterTools = new DaraTools.masterTools();  
+
+
+// /////
+// import { masterTools } from '../DaraTools';
+
+// /////
+// /////
+// /////
+
+// alert('have ')
+
+// //masterTools._sayHello(;)
+
+
+
+
+
+ //const masterTools = new DaraTools.masterTools();  
 // masterTools.test();
 // The SDK is supported on many different browsers, but there are some that
 // don't provide camera access. This function detects if the browser is supported
